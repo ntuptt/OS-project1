@@ -2,7 +2,8 @@
 
 
 ## Design
-# FIFO (or First-Come, First-Served)
+* 本次實作使用C++，因為對Ｃ不太熟，有問過老師可不可以使用C++，老師說可以！
+### FIFO (or First-Come, First-Served)
 * 原理
     * 最早到達的(即arrival time最小)process，修先取得CPU。
 * 執行
@@ -10,7 +11,7 @@
     * 若此時沒有子程序在執行，則父程序選擇一個ready time最小的process執行。
     * 若此時有子程序在執行，父程序將後進來的process先block住。
 
-# SJF (Short Job First)
+### SJF (Short Job First)
 * 原理
     * 具有最小excution time的process，優先取得CPU。
 * 執行
@@ -18,7 +19,7 @@
     * 若此時沒有子程序在執行，則父程序選擇一個ready time最小的process執行，若相同，則選擇execution time最小的先執行。
     * 若此時有子程序在執行，父程序將後進來的process先block住。
 
-# PSJF (Preemptive Shortest Job First)
+### PSJF (Preemptive Shortest Job First)
 * 原理
     * 與SJF相似，但可以插隊，例如，若新到達的process的execution time比現在正在執行的process來的小，新的process可以插隊執行。
 * 執行
@@ -26,7 +27,7 @@
     * 若此時沒有子程序在執行，則父程序選擇一個ready time最小的process執行，若相同，則選擇execution time最小的先執行。
     * 若此時有子程序在執行，如果進來的process's execution time比現在正在執行的process來的小，則將現在執行的process block住，改為執行新進來的process。
 
-# RR (Round-Robin)
+### RR (Round-Robin)
 * 原理
     * OS會規定一個CPU time slice，當process取得CPU後，若未能在此slice內完成工作，則Timer會發出"Time-out" interrupt通知OS，OS則強制此process放掉CPU資源，給其他process使用，而此process需等下一輪才能拿到CPU，此外，每一輪中的processs是以FIFO順序取的CPU資源。
 * 執行
