@@ -69,3 +69,6 @@ asmlinkage void sys_pj1_print(int pid, long start_time, long end_time) {
 
 ## Conclusion and Explanation
 * 在實際打程式的時候發現，要讓程序銜接的最好，核心理念是要對於process作優先分級處理。正在執行process的為最優先，下一個要執行process為次要優先，其餘的processes順序最低。
+* 實際直與理論值方面，我使用github上之前助教寫的程式來跑，在FIFO、SJF、PSJF都十分準確，但在RR部分，發現在最後的processes順序都不正確，這部份的問題不太清楚，因為照道理我順序都已經排好，不太可能會錯，這問題還要在思考思考。
+* 其他的測資雖說十分準確，但時間仍非100%正確，大概還有1,2%的誤差，我猜測可能原因，是因為雖然跑一個time slot，但並非只是跑那些迴圈，還有一些檢查工作，像是判斷現在有沒有子程序在跑等等，會造成為小的誤差，但如果time slot變多，誤差就會變大。
+* [參考資料:MROS/2018-os-pj1-judge](https://github.com/MROS/2018-os-pj1-judge.git)
