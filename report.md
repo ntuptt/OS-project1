@@ -66,6 +66,7 @@ asmlinkage void sys_pj1_print(int pid, long start_time, long end_time) {
 
 * ![system call table](syscall_table.png)
 
+<br/>
 
 ## Conclusion and Explanation
 * 在實際打程式的時候發現，要讓程序銜接的最好，核心理念是要對於process作優先分級處理。正在執行process的為最優先，下一個要執行process為次要優先，其餘的processes順序最低。
